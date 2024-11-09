@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+    <h1 class="text-3xl font-bold mb-4">Task Manager</h1>
+
+    <!-- Date Navigation -->
+    <div class="flex items-center mb-4">
+        <button id="prev-date-button" class="px-4 py-2 bg-gray-500 text-white rounded shadow hover:bg-gray-600 focus:outline-none">
+            Previous Day
+        </button>
+        <span id="current-date" class="mx-4 text-xl font-semibold"></span>
+        <button id="next-date-button" class="px-4 py-2 bg-gray-500 text-white rounded shadow hover:bg-gray-600 focus:outline-none">
+            Next Day
+        </button>
+    </div>
+
+    <!-- Button to Open Modal -->
+    <button id="open-modal-button" class="px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 focus:outline-none">
+        Add Task
+    </button>
+
+    <!-- Modal for Adding Tasks -->
+    <div id="addTaskModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-11/12 max-w-md">
+            <h2 class="text-2xl font-semibold mb-4">Add a New Task</h2>
+            <input type="text" id="task-input" placeholder="Enter task" class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <div class="flex space-x-2">
+                <button id="add-task-button" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 focus:outline-none">
+                    Add Task
+                </button>
+                <button id="voice-button" class="px-4 py-2 bg-yellow-600 text-white rounded hover:bg-yellow-700 focus:outline-none">
+                    Add via Voice
+                </button>
+                <button id="image-button" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 focus:outline-none">
+                    Add via Image
+                </button>
+            </div>
+            <button id="close-modal-button" class="mt-4 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 focus:outline-none">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Task List -->
+    <ul id="task-list" class="mt-6 w-full max-w-lg bg-white rounded-lg shadow p-4"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>

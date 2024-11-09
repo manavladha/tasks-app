@@ -1,0 +1,16 @@
+{
+    "name": "tasks-app-monorepo",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": [
+      "frontend",
+      "backend"
+    ],
+    "scripts": {
+      "start:frontend": "cd frontend && vercel dev",
+      "start:backend": "cd backend && node server.js",
+      "deploy:frontend": "cd frontend && vercel --prod",
+      "deploy:backend": "cd backend && vercel --prod"
+    }
+  }
+  
